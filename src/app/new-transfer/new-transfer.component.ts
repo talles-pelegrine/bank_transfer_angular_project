@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-new-transfer',
   templateUrl: './new-transfer.component.html',
   styleUrls: ['./new-transfer.component.scss']
 })
-export class NewTransferComponent implements OnInit {
+export class NewTransferComponent {
 
-  constructor() { }
+  value: number
+  destiny: number
 
-  ngOnInit(): void {
+  startNewTransfer() {
+    console.log("New transfer")
+    console.log("Value: ", this.value)
+    console.log("Destiny: ", this.destiny)
   }
 
 }
