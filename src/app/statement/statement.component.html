@@ -1,0 +1,15 @@
+<table class="table">
+    <thead class="table__header">
+        <th class="table__header__content">Date</th>
+        <th class="table__header__content">Value</th>
+        <th class="table__header__content">Destiny</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transferObject of transferObjects" class="table__line">
+            <td class="table_content">{{transferObject?.date | date: "short"}}</td>
+            <td class="table_content">{{transferObject?.value | currency}}</td>
+            <td class="table_content">{{transferObject?.destiny}}</td>
+        </tr>
+    </tbody>
+</table>
+

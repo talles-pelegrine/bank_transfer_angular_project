@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-new-transfer',
@@ -7,13 +8,20 @@ import { Component } from '@angular/core';
 })
 export class NewTransferComponent {
 
+  @Output() whenTransferring = new EventEmitter<any>()
+
   value: number
   destiny: number
 
   startNewTransfer() {
     console.log("New transfer")
-    console.log("Value: ", this.value)
-    console.log("Destiny: ", this.destiny)
+    this.whenTransferring.emit({ value: this.value, destiny: this.destiny})
+    this.clearForm()
+  }
+
+  clearForm() {
+    this.value = null
+    this.destiny = null
   }
 
 }
